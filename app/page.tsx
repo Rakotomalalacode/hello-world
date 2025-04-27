@@ -1,83 +1,42 @@
 "use client"
 
-import Link from "next/link"
-import { useEffect, useState } from "react"
 import { useSession } from "next-auth/react"
-import CryptoJS from "crypto-js";
+import Image from "next/image";
 import { useRouter } from "next/navigation"
-import Theme from "@/components/Theme";
 
-const ENCRYPTION_URL = "ny_avy_any_tonga_aty_ny_aty_tonga_any"
-export default function Autheme() {
-  const [linksSignin, setLinksSignin] = useState('');
+const Home = () => {
   const { data: session, status } = useSession();
-  const [baseUrl, setBaseUrl] = useState('');
   const router = useRouter();
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const currentBaseUrl = window.location.origin;
-      setBaseUrl(currentBaseUrl);
-      const encryptedURL = CryptoJS.AES.encrypt(
-        currentBaseUrl.toString(),
-        ENCRYPTION_URL
-      ).toString();
-      setLinksSignin(`/auth?${encryptedURL}${encryptedURL}`);
+
+  const hancderClick = () => {
+    if (session?.user?.role) {
+
+      router.push(`falarohy`);
     }
-  }, []);
-
-
+  }
 
   return (
-    <div>
-      <Theme/>
-      {session ? (
-        <div className="flex gap-8">
-          <div className="transition-transform duration-300 hover:scale-105">
-            <div className="z-0 ml-4 absolute">
-              <span className="relative flex h-4  w-4">
-                <span className="absolute h-full w-full animate-ping rounded-full bg-oranground opacity-25"></span>
-                <span className="relative text-sm h-4 w-4 rounded-full flex items-center justify-center bg-oranground text-white">
-                  0
-                </span>
-              </span>
-            </div>
-            <p>helo</p>
+    <div className="w-full h-screen flex flex-col justify-center items-center">
+      <div
+        onClick={hancderClick}
+        className="bg-darkwhite flex flex-col gap-6 p-4 items-center rounded border border-dash">
+        <div className="flex gap-3 items-center">
+          
+          <div className="p-4">
+            <p>{session?.user.name}</p>
+            <p>{session?.user.email}</p>
           </div>
+        </div>
+        <div className="w-full">
           <button
-            onClick={() => {
-              if (session?.user?.role) {
-                const ENCRYPTION_URLS = "ny_avy_any_tonga_aty_ny_aty_tonga_any"
-                const cryptGoogleId = CryptoJS.AES.encrypt(
-                  session.user?.googleId.toString(),
-                  ENCRYPTION_URLS
-                ).toString();
-                router.push(`/dashboard/${session.user.role}?${cryptGoogleId}&${cryptGoogleId}&U=${session.user.googleId}&${session.user?.email}`);
-              }
-            }}
-            className="bg-oranground hover:bg-oranground/90 text-white rounded-sm py-2 px-7"
-          >Compte</button>
-          <p>helo</p>
+            className="bg-violeground hover:bg-violeground/90 text-white py-2 w-full rounded"
+          >
+            Connecter
+          </button>
         </div>
-      ) : (
-        <div className="flex gap-8">
-          <div className="transition-transform duration-300 hover:scale-105">
-            <div className="z-0 ml-4 absolute">
-              <span className="relative flex h-4  w-4">
-                <span className="absolute h-full w-full animate-ping rounded-full bg-oranground opacity-25"></span>
-                <span className="relative text-sm h-4 w-4 rounded-full flex items-center justify-center bg-oranground text-white">
-                  0
-                </span>
-              </span>
-            </div>
-            <p>helo</p>
-          </div>
-          <Link
-            href={linksSignin}
-            className="bg-oranground hover:bg-oranground/90 text-white rounded-sm py-2 px-7"
-          >Se connecter</Link>
-          <p>helo</p>
-        </div>
-      )}
+      </div>
     </div>
   )
 }
+
+export default Home

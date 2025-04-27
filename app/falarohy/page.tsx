@@ -1,6 +1,7 @@
 'use client'
 
 import { useSession, signOut } from 'next-auth/react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 
@@ -18,19 +19,18 @@ const DashboardPage: React.FC = () => {
     return <p>Chargement du tableau de bord...</p>;
   }
 
-  if (status === 'authenticated' && session?.user) {
     return (
       <div>
-        <h1>Bienvenue sur votre Tableau de Bord, {session.user.name}!</h1>
-        {session.user.email && <p>Votre email : {session.user.email}</p>}
+        <h1>Bienvenue sur votre Tableau de Bord, {session?.user.name}!</h1>
+        {session?.user.email && <p>Votre email : {session?.user.email}</p>}
+          <Image 
+                src={`${session?.user.image}`}
+                width={500}
+                height={500}
+                alt={`${session?.user.name}`} />
         <button onClick={() => signOut()}>Se Déconnecter</button>
       </div>
     );
   }
-
-  // Si l'état est 'unauthenticated', le useEffect devrait déjà avoir redirigé.
-  // On ajoute un fallback pour le cas où.
-  return <p>Vous n'êtes pas connecté.</p>;
-};
 
 export default DashboardPage;
