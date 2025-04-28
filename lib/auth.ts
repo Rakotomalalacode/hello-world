@@ -1,6 +1,6 @@
 import { NextAuthOptions, Session, User } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
-import { PrismaClient, User as PrismaUser } from '@prisma/client';
+import { PrismaClient} from '@prisma/client';
 import { Profile } from 'next-auth';
 
 const prisma = new PrismaClient();

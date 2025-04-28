@@ -4,17 +4,11 @@ import React from 'react';
 const CookiePolicyPage = () => {
     const currentDate = new Date().toLocaleDateString();
     const platformName = <p className='font-major text-oranground'>eduVibe</p> as any;
-    const privacyPolicyLink = "/politique-de-confidentialite";
+    const privacyPolicyLink = "/privacy/politique-de-confidentialite";
 
     return (
         <>
             <div className="container mx-auto my-8 px-4 max-w-3xl">
-
-                <Link className='text-center flex flex-col mb-8 gap-2 font-major text-white bg-oranground p-6 w-1/2 m-auto' href={'/'}>
-                    <h1 className='text-5xl'>eduvibe</h1>
-                    <p>"learning your way"</p>
-                </Link>
-
                 <div className="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-gray-300 pb-2">
                     Politique de Cookies de {platformName}
                 </div>

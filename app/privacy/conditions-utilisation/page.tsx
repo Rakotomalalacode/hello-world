@@ -4,17 +4,12 @@ import Link from 'next/link';
 const TermsOfUsePage = () => {
     const currentDate = new Date().toLocaleDateString();
     const platformName = <p className='font-major text-oranground'>eduVibe</p> as any;
-    const privacyPolicyLink = "/politique-de-confidentialite"; // Remplacez par le lien réel
+    const privacyPolicyLink = "/privacy/politique-de-confidentialite"; // Remplacez par le lien réel
     const contactEmail = process.env.CONTACT_EMAIL;
 
     return (
         <>
             <div className="container mx-auto my-8 px-4 max-w-3xl">
-                <Link href={'/'} className='text-center flex flex-col mb-8 gap-2 font-major text-white bg-oranground p-6 w-1/2 m-auto' >
-                    <h1 className='text-5xl'>eduvibe</h1>
-                    <p>"learning your way"</p>
-                </Link>
-
                 <div className="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-gray-300 pb-2">
                     Conditions d'Utilisation de {platformName}
                 </div>
