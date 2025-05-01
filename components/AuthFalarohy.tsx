@@ -1,13 +1,13 @@
 'use client';
 
 import { getProviders, signIn, useSession, LiteralUnion, ClientSafeProvider } from 'next-auth/react';
-//import type { BuiltInProviderType } from 'next-auth/providers';
 import Image from 'next/image';
 import GoogleImage from "@/public/images/google-color-svgrepo-com.svg";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import CryptoJS from "crypto-js";
+import images from '@/constants/falarohy';
 
 const ENCRYPTION_ID = "ny_avy_any_tonga_aty_ny_aty_tonga_any";
 
@@ -35,11 +35,13 @@ const AuthFalarohy = () => {
           googleId.toString(),
           ENCRYPTION_ID
         ).toString();
-        router.push("/falarohy")
-       // router.push(`/dashboard/${role}?${cryptGoogleId}&${cryptGoogleId}&U=${googleId}&${session.user.email}`);
-      } else {
-        router.push(`/auth`);
+        router.push(`/falarohy/${role}?${cryptGoogleId}&${cryptGoogleId}&U=${googleId}&${session.user.email}`);
       }
+      else {
+        router.push(`/auth?one`);
+      }
+    } else {
+      router.push(`/auth?tow=#auth_#`);
     }
   }, [status, session, router]);
 
@@ -50,6 +52,15 @@ const AuthFalarohy = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="w-[90%] md:w-auto lg:p-16 p-10 text-center flex flex-col gap-6 rounded bg-darkwhite shadow">
+        <div className='flex justify-center'>
+          <Link href={'/'}>
+            <Image
+              src={images.logo}
+              alt={'falarohy'}
+              width={200}
+              height={100} />
+          </Link>
+        </div>
         <h1 className="lg:text-3xl text-2xl">Connexion ou Inscription</h1>
         {Object.values(providers).map((provider) => (
           <div key={provider.name} className='w-full flex justify-center'>

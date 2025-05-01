@@ -5,15 +5,15 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 
-const DashboardPage: React.FC = () => {
+const DashboardTeacher: React.FC = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  useEffect(() => {
+ /* useEffect(() => {
     if (status === 'unauthenticated') {
       router.push('/auth');
     }
-  }, [status, router]);
+  }, [status, router]);*/
 
   if (status === 'loading') {
     return <p>Chargement du tableau de bord...</p>;
@@ -33,4 +33,4 @@ const DashboardPage: React.FC = () => {
     );
   }
 
-export default DashboardPage;
+export default DashboardTeacher;
