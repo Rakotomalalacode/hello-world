@@ -32,12 +32,12 @@ const DashboardTeacher: React.FC = () => {
           <div
             key={index}
             onClick={() => setActive(index)}
-            className={`flex items-center gap-1 flex-col w-full py-2 rounded ${active === index ? 'bg-darkwhite text-[#F37626]' : 'bg-dash'
+            className={`flex items-center gap-1 flex-col w-full py-2 rounded ${active === index ? 'bg-darkwhite text-oragersground' : 'bg-dash'
               }`}
           >
             <p>{active === index ? btn.iconTow : btn.iconOne}</p>
             <p className='text-[8px]'>{btn.title}</p>
-            {active === index ? <div className='w-1.5 h-9 mt-0.5 -ml-[50px] rounded-2xl bg-[#2BB3A5] absolute'></div> : ""}
+            {active === index ? <div className='w-1.5 h-9 mt-0.5 -ml-[50px] rounded-2xl bg-vertbleuground absolute'></div> : ""}
           </div>
         ))}
       </div>

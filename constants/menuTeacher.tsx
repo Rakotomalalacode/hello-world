@@ -1,3 +1,4 @@
+import GestionCours from "@/components/teacher/gestionCours";
 import { BiSolidDashboard } from "react-icons/bi";
 import { FaUser, FaUserAlt } from "react-icons/fa";
 import { GoHome, GoHomeFill } from "react-icons/go";
@@ -29,7 +30,7 @@ const menuTeacher:MenuTeacher[] = [
         title: "Cours",
         iconOne: <MdAddCircleOutline size={26} />,
         iconTow: <MdAddCircle size={26} />,
-        Content: <p>aojoute de cours</p>,
+        Content: <GestionCours/>,
     },
    /* {
         title: "",

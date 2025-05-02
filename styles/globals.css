@@ -48,15 +48,19 @@
   --color-blcdarground:var(--blcdarground);
   --color-violeground: var(--violeground);
   --color-grayground:var(--grayground);
-  --color-darkwhite:var(--darkwhite)
+  --color-darkwhite:var(--darkwhite);
+  --color-vertbleuground:var(--vertbleuground);
+  --color-oragersground:var(--oragersground);
 }
 
 :root {
   --radius: 0.625rem;
+  --oragersground:#F37626;
   --background: #F2F4F7;
   --foreground: #171717;
   --vertground:#24D26D;
   --violeground:#AB47A3;
+  --vertbleuground: #2BB3A5;
   --dash:#d1d5dc;
   --grayground:#525351;
   --darkwhite: #ffff;
