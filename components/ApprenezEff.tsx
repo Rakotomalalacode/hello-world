@@ -6,7 +6,7 @@ import { IoIosSchool } from "react-icons/io"
 const ApprenezEff = () => {
     return (
         <div>
-            <div className="w-full h-52 flex justify-between pr-4 rounded-xl bg-vertground">
+            <div className="w-full h-52 flex justify-between pr-4 rounded bg-vertground">
                 <div className="p-4 flex flex-col justify-between">
                     <div>
                         <h1 className="text-white text-3xl">Apprenez efficacement avec nous !</h1>

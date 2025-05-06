@@ -38,13 +38,13 @@ const DrawerNewcous = () => {
                 </DrawerContent>
             </Drawer>
             <div className="flex justify-between">
-                <div className="flex flex-col items-center bg-dash  rounded-sm">
+                <div className="flex flex-col items-center bg-dash  rounded">
                     <p className="text-lg p-2 text-white bg-oragersground px-8.5 rounded-t-sm">Cours en cours</p>
                     <div className="p-5">
                         5
                     </div>
                 </div>
-                <div className="flex flex-col items-center bg-dash  rounded-sm">
+                <div className="flex flex-col items-center bg-dash  rounded">
                     <p className="text-lg p-2 text-white bg-oragersground px-7 rounded-t-sm">Étudier qui apprend</p>
                     <div className="p-5">
                         25

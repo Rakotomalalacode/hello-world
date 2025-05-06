@@ -126,7 +126,6 @@ const GestionCours = () => {
                     </ScrollArea>
                 </div>
                 <div className="w-[80%] flex flex-col gap-4">
-                    <h1 className="text-xl">Activité actuelle</h1>
                     <ChartInteractive/>
                 </div>
             </div>

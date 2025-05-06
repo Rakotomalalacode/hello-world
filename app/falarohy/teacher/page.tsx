@@ -1,5 +1,6 @@
 'use client'
 
+import { ProfilUsers } from '@/components/ProfilUsers';
 import images from '@/constants/falarohy';
 import menuTeacher from '@/constants/menuTeacher';
 import { useSession, signOut } from 'next-auth/react';
@@ -42,8 +43,9 @@ const DashboardTeacher: React.FC = () => {
         ))}
       </div>
       <div className='max-h-screen overflow-x-hidden overflow-y-auto overflow-scroll w-[95%]'>
-        <div className='sticky top-0 w-full flex h-[72px] bg-background border-b border-dash items-center px-4'>
+        <div className='sticky top-0 w-full flex h-[72px] bg-background border-b border-dash justify-between items-center px-6'>
           hjhjhj
+          <ProfilUsers />
         </div>
         <div className='px-4'>
           {menuTeacher[active].Content}

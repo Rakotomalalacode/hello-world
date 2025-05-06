@@ -154,7 +154,7 @@ export function ChartInteractive() {
     <Card className="rounded">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-4 sm:flex-row">
         <div className="grid flex-1 gap-1 text-center sm:text-left">
-          <CardTitle>Area Chart - Interactive</CardTitle>
+          <CardTitle>Activité actuelle</CardTitle>
           <CardDescription>
             Showing total visitors for the last 3 months
           </CardDescription>
