@@ -1,6 +1,7 @@
 'use client'
 
 import { ProfilUsers } from '@/components/ProfilUsers';
+import Theme from '@/components/Theme';
 import images from '@/constants/falarohy';
 import menuTeacher from '@/constants/menuTeacher';
 import { useSession, signOut } from 'next-auth/react';
@@ -33,7 +34,7 @@ const DashboardTeacher: React.FC = () => {
           <div
             key={index}
             onClick={() => setActive(index)}
-            className={`flex items-center gap-1 flex-col w-full py-2 rounded ${active === index ? 'bg-darkwhite text-oragersground' : 'bg-dash'
+            className={`flex items-center gap-1 flex-col w-full py-2 rounded ${active === index ? 'bg-darkwhite text-violeground' : 'bg-dash'
               }`}
           >
             <p>{active === index ? btn.iconTow : btn.iconOne}</p>
@@ -41,6 +42,9 @@ const DashboardTeacher: React.FC = () => {
             {active === index ? <div className='w-1.5 h-9 mt-0.5 -ml-[50px] rounded-2xl bg-vertbleuground absolute'></div> : ""}
           </div>
         ))}
+        <div>
+          <Theme />
+        </div>
       </div>
       <div className='max-h-screen overflow-x-hidden overflow-y-auto overflow-scroll w-[95%]'>
         <div className='sticky top-0 w-full flex h-[72px] bg-background border-b border-dash justify-between items-center px-6'>

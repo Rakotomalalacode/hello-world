@@ -2,7 +2,6 @@ import {
     Drawer,
     DrawerClose,
     DrawerContent,
-    DrawerDescription,
     DrawerFooter,
     DrawerHeader,
     DrawerTitle,
@@ -26,14 +25,18 @@ const DrawerNewcous = () => {
                 </DrawerTrigger>
                 <DrawerContent>
                     <DrawerHeader>
-                        <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                        <DrawerDescription>This action cannot be undone.</DrawerDescription>
-                    </DrawerHeader>
-                    <DrawerFooter>
-                        Submit
-                        <DrawerClose>
-                            Cancel
+                        <div>
+                        <DrawerTitle>créer un nouveau cours</DrawerTitle>
+                        </div>
+                        <DrawerClose className="bg-red-600/90 hover:bg-red-600 h-8 px-4 rounded text-white">
+                            Close
                         </DrawerClose>
+                    </DrawerHeader>    
+                        <div className="px-4">
+                         hello   
+                        </div>           
+                    <DrawerFooter className="text-center">
+                        Falarohy
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>
