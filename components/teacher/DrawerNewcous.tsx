@@ -33,7 +33,7 @@ const DrawerNewcous = () => {
                         </DrawerClose>
                     </DrawerHeader>    
                         <div className="px-4">
-                         hello   
+                        hjhjj 
                         </div>           
                     <DrawerFooter className="text-center">
                         Falarohy
